@@ -71,6 +71,7 @@ local function createSequence(seqNum, sounds, resultTable)
 				Cmd("Store Sequence "..seqNum.." Cue "..i.." /CreateSecondCue")
 			end
 			Cmd("set seq "..seqNum.." cue "..i.." property \"Command\" \"Off Sound 1 Thru; Go+ Sound "..sound["No"].."\"")
+			Cmd("set seq "..seqNum.." cue "..i.." property \"Name\" \""..sound["Name"]:gsub("%[",""):gsub("%]","").."\"")
 		end
 	end
 end
