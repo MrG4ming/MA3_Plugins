@@ -29,7 +29,7 @@ local function openMsgBox(sounds)
 
 	local msgOptions = {
 			title = "Please select sounds for Cue",
-			commands = {{value = 1, name = "Ok"}, {value = 0, name = "Cancel"}},
+			commands = {{value = 0, name = "Cancel"}, {value = 1, name = "Ok"}},
 			states = states,
 			inputs = inputs,
 			selectors = selectors,
@@ -113,7 +113,11 @@ local function main()
 	
 	-- print results:
 	Printf("Success = "..tostring(resultTable.success))
+	--exit on Cancel:
 	Printf("Result = "..resultTable.result)
+	if tonumber(resultTable.result) == 0 then
+		return
+	end
 	--Printf("States = "..tostring(resultTable.states[1]))
 	
 --	for k,v in pairs(resultTable.inputs) do
