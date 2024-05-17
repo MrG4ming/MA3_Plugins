@@ -200,7 +200,7 @@ local function createSequence(seqNum, sounds, resultTable, seqName)
 		--Printf("Iteration: "..i)
 		
 		local sound = sounds:Children()[i]
-		local state = resultTable.states[sound["Name"]]
+		local state = resultTable.states[getNumerator(i)..sound["Name"]]
 		
 		--Printf("State: "..tostring(resultTable.states[sound["Name"]]))
 		
