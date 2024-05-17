@@ -197,12 +197,12 @@ local function createSequence(seqNum, sounds, resultTable, seqName)
 	--DataPool().Sequences:Insert(seqNum)
 	
 	for i = 1, #sounds:Children() do
-		Printf("Iteration: "..i)
+		--Printf("Iteration: "..i)
 		
 		local sound = sounds:Children()[i]
 		local state = resultTable.states[sound["Name"]]
 		
-		Printf("State: "..tostring(resultTable.states[sound["Name"]]))
+		--Printf("State: "..tostring(resultTable.states[sound["Name"]]))
 		
 		if tostring(state) == "true" then
 			if DataPool().Sequences[seqNum][i+2] == nil then
@@ -301,7 +301,7 @@ local function debugDump()
 	Printf("-----------------------")
 	
 	for i = 1, #sounds:Children() do
-		Printf("Iteration: "..i)
+		--Printf("Iteration: "..i)
 		
 		local cSound = sounds:Children()[i]
 		
